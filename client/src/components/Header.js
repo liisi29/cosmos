@@ -71,9 +71,8 @@ const Header = props => {
         height: "50px",
         width: "auto",
       }} />
-      <Logo animate size={50} className={classes.logo} layer="header" />
       <Words animate className={classes.banner}>
-        NASA Mission Control
+        Let's go to COSMOS
       </Words>
       <nav className={`${classes.nav}`}>
         <Clickable className={classes.clickable} onClick={onNav}>

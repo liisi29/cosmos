@@ -45,12 +45,12 @@ const sounds = {
 const theme = {
   color: {
     primary: {
-      base: "#b854a2", 
+      // base: "#b854a2", // main text
       dark: "#25002c", // borders
     },
     success: {
-      base: "#21f3f8", // button
-      dark: "#25002c", // border
+      base: "#b854a2", // button
+      dark: "#b854a2", // border
     },
     content: "#8d0f61",
 
