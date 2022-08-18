@@ -1,5 +1,4 @@
 import { 
-  Logo,
   Words,
   Header as ArwesHeader,
   Highlight,
@@ -65,15 +64,20 @@ const styles = theme => ({
 const Header = props => {
   const { classes, onNav, ...rest } = props;
   return <ArwesHeader animate>
+    
     <Centered className={classes.root} {...rest}>
-      <img src="/favicon.png" alt="" className={classes.img} style={{
+      <Link to="/">
+        <img src="/favicon.png" alt="" className={classes.img} style={{
         margin: "15px 10px 15px 0",
         height: "50px",
         width: "auto",
-      }} />
-      <Words animate className={classes.banner}>
-        Let's go to COSMOS
-      </Words>
+        }} />
+      </Link>
+      <Link className={classes.link} to="/">
+        <Words animate className={classes.banner}>
+          Let's go to COSMOS
+        </Words>
+      </Link>
       <nav className={`${classes.nav}`}>
         <Clickable className={classes.clickable} onClick={onNav}>
           <Highlight className={classes.button} animate layer="header">
