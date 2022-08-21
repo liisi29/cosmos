@@ -8,10 +8,12 @@
     "install-client": "npm install --prefix client",
     "install": "npm run install-server && npm run install-client",
     "server1": "cd server & npm run watch",
-    "client2": "cd client & npm start",
+    "client1": "cd client & npm start",
     "server": "npm run watch --prefix server",
     "client": "npm start --prefix client",
     "watch": "npm run server & npm run client",
+    "deploy-client": "npm run build --prefix client",
+    "deploy": "npm run deploy-client && npm run start  --prefix server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
