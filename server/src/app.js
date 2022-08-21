@@ -30,6 +30,8 @@ app.use(morgan("combined", { stream: accessLogStream }));  // combined is defaul
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "..", "public")))
 app.use(planetsRouter);
+app.use(launchesRouter);
+
 
 
 module.exports = app;
