@@ -11,12 +11,26 @@ const launch = {
     success: true,
 }
 launchesMap.set(launch.flightNumber, launch);
-
+let latestFlightNumber = launch.flightNumber;
 // get array from map
 function getAllLaunches() {
-    return Array.from(launches.values());
+    return Array.from(launchesMap.values());
+}
+// get array from map
+function addNewLaunch(launch) {
+    launchesMap.set(
+        latestFlightNumber,
+        Object.assign(launch, {
+            customers: ["ZTM", "Liisi"],
+            flightNumber: latestFlightNumber,
+            upcoming: true,
+            success: true,
+        }),
+    );
+    latestFlightNumber++;
 }
 
 module.exports = {
     getAllLaunches,
+    addNewLaunch,
 };
