@@ -19,7 +19,9 @@ const Launch = (props) => {
       <li>Effective stellar flux &gt; 0.36 times Earth's value and &lt; 1.11 times Earth's value</li>
     </ul>
 
-    <form onSubmit={props.submitLaunch} style={{display: "inline-grid", gridTemplateColumns: "auto auto", gridGap: "10px 20px"}}>
+    <form onSubmit={props.submitLaunch} style={
+      { display: "inline-grid", gridTemplateColumns: "auto auto", gridGap: "10px 20px" }
+    }>
       <label htmlFor="launch-day">Launch Date</label>
       <input type="date" id="launch-day" name="launch-day" min={today} max="2040-12-31" defaultValue={today} />
       <label htmlFor="mission-name">Mission Name</label>

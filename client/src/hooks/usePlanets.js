@@ -6,9 +6,7 @@ function usePlanets() {
   const [planets, savePlanets] = useState([]);
 
   const getPlanets = useCallback(async () => {
-    console.log("get planets");
     const fetchedPlanets = await httpGetPlanets();
-    console.log("fetchedPlanets", fetchedPlanets);
     savePlanets(fetchedPlanets);
   }, []);
 
