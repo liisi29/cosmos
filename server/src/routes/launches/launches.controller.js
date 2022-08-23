@@ -8,6 +8,7 @@ async function httpGetAllLaunches(req, res) {
     // to assure that we only call it once
     // we cannot set response multiple times
 }
+
 function httpAddNewLaunch(req, res) {
     const launch = req.body;
     const { isOk, missing } = validate(launch);
