@@ -1,2 +1,3 @@
 node_modules
 server/src/access.log
+server/public/*
