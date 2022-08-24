@@ -1,9 +1,26 @@
 const {
     getAllLaunches,
     addNewLaunch,
+    deleteLaunch: deleteLaunchById,
+    existsLaunch,
 } = require("../../models/launches.model");
 async function httpGetAllLaunches(req, res) {
     return res.status(200).json(getAllLaunches());
+    // its good to return res.status
+    // to assure that we only call it once
+    // we cannot set response multiple times
+}
+async function httpDeleteLaunch(req, res) {
+    console.log("httpDeleteLaunch", req)
+    const flightNumber = Number(req.params.id);
+    if (existsLaunch(flightNumber)) {
+        return res.status(200).json(deleteLaunchById(flightNumber));
+    } else {
+        return res.status(404).json({
+            error: 'Launch not found',
+          });
+    }
+   
     // its good to return res.status
     // to assure that we only call it once
     // we cannot set response multiple times
@@ -42,4 +59,5 @@ function validate(launch) {
 module.exports = {
     httpGetAllLaunches,
     httpAddNewLaunch,
+    httpDeleteLaunch
 }
