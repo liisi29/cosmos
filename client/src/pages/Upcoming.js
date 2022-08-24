@@ -10,18 +10,10 @@ import {
 
 import Clickable from "../components/Clickable";
 
-const styles = () => ({
-  link: {
-    color: "red",
-    textDecoration: "none",
-  },
-});
-
 const Upcoming = props => {
   const { 
     entered,
     launches,
-    classes,
     abortLaunch,
   } = props;
 
@@ -30,8 +22,8 @@ const Upcoming = props => {
       .map((launch) => {
         return <tr key={String(launch.flightNumber)}>
           <td>
-            <Clickable style={{color:"red"}}>
-              <Link className={classes.link} onClick={() => abortLaunch(launch.flightNumber)}>
+            <Clickable>
+              <Link onClick={() => abortLaunch(launch.flightNumber)}>
                 ✖
               </Link>
             </Clickable>
@@ -43,7 +35,7 @@ const Upcoming = props => {
           <td>{launch.target}</td>
         </tr>;
       });
-  }, [launches, abortLaunch, classes.link]);
+  }, [launches, abortLaunch]);
 
   return <Appear id="upcoming" animate show={entered}>
     <Paragraph>Upcoming missions including both SpaceX launches and newly scheduled Zero to Mastery rockets.</Paragraph>
@@ -68,4 +60,4 @@ const Upcoming = props => {
   </Appear>;
 }
 
-export default withStyles(styles)(Upcoming);
+export default (Upcoming);

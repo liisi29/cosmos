@@ -12,7 +12,7 @@ const fs = require("fs");
 const app = express();
 // added cors middleware
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://interstellar-sunset-569925.postman.co"],
 }));
 // create a write stream (in append mode)
 var accessLogStream = fs.createWriteStream(

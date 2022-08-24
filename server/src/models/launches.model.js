@@ -13,6 +13,10 @@ const launch = {
 launchesMap.set(launch.flightNumber, launch);
 let latestFlightNumber = launch.flightNumber;
 // get array from map
+function existsLaunch(flightNumber) {
+    return launchesMap.has(flightNumber);
+}
+// get array from map
 function getAllLaunches() {
     return Array.from(launchesMap.values());
 }
@@ -29,8 +33,16 @@ function addNewLaunch(launch) {
     );
     latestFlightNumber++;
 }
+// get array from map
+function deleteLaunch(flightNumber) {
+    const aborted = launchesMap.get(flightNumber);
+    aborted.upcoming = false;
+    aborted.success = false;
+}
 
 module.exports = {
-    getAllLaunches,
     addNewLaunch,
+    deleteLaunch,
+    existsLaunch,
+    getAllLaunches,
 };

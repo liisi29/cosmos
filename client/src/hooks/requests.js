@@ -22,7 +22,6 @@ async function httpSubmitLaunch(launch) {
   console.log(launch)
  
   try {
-    console.log("going in")
     return await fetch(`${API_URL}/launches`, {
       method: "post",
       headers: {
@@ -36,9 +35,22 @@ async function httpSubmitLaunch(launch) {
   }
 }
 
-async function httpAbortLaunch(id) {
-  // TODO: Once API is ready.
   // Delete launch with given ID.
+async function httpAbortLaunch(id) {
+  console.log("httpAbortLaunch", id)
+ 
+  try {
+    console.log("going in 2")
+    return await fetch(`${API_URL}/launches/${id}`, {
+      method: "delete",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }) 
+  } catch (e) {
+    console.error(e);
+    return { ok: false };
+  }
 }
 
 export {
